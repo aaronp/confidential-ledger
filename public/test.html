@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Import Test</title>
+</head>
+<body>
+  <h1>Testing Module Imports</h1>
+  <div id="output"></div>
+  <script type="module">
+    try {
+      const module = await import('/src/lib/ledger.ts');
+      document.getElementById('output').innerHTML = '<pre>Success! Exports: ' + JSON.stringify(Object.keys(module), null, 2) + '</pre>';
+    } catch (e) {
+      document.getElementById('output').innerHTML = '<pre style="color: red">Error: ' + e.message + '\n\n' + e.stack + '</pre>';
+    }
+  </script>
+</body>
+</html>
