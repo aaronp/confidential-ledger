@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(npm run type-check:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Read(//Users/aaron/dev/sandbox/berits/merits-legacy/**)",
+      "Read(//Users/aaron/dev/sandbox/berits/**)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
