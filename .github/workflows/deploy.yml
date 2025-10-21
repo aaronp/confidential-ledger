@@ -27,6 +27,17 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Debug directory structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Checking for packages directory:"
+          ls -la packages/ || echo "packages directory not found"
+          echo "Checking for ledger-ui directory:"
+          ls -la ledger-ui/ || echo "ledger-ui directory not found"
+
       - name: Install ledger package dependencies
         run: bun install
         working-directory: ./packages/ledger
