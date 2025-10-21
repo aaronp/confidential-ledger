@@ -27,8 +27,9 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install root dependencies
+      - name: Install ledger package dependencies
         run: bun install
+        working-directory: ./packages/ledger
 
       - name: Build ledger package
         run: bun run build
