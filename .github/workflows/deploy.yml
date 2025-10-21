@@ -29,15 +29,14 @@ jobs:
 
       - name: Install root dependencies
         run: bun install
-        working-directory: ..
 
       - name: Install ledger-ui dependencies
         run: bun install
-        working-directory: .
+        working-directory: ./ledger-ui
 
       - name: Build
         run: bun run build
-        working-directory: .
+        working-directory: ./ledger-ui
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./ledger-ui/dist
 
   deploy:
     environment:
