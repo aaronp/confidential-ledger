@@ -29,7 +29,6 @@ jobs:
 
       - name: Install root dependencies
         run: bun install
-        working-directory: ..
 
       - name: Install ledger-ui dependencies
         run: bun install
