@@ -30,6 +30,10 @@ jobs:
       - name: Install root dependencies
         run: bun install
 
+      - name: Build ledger package
+        run: bun run build
+        working-directory: ./packages/ledger
+
       - name: Install ledger-ui dependencies
         run: bun install
         working-directory: ./ledger-ui
