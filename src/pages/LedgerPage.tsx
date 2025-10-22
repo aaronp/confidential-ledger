@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { KeyPair } from "@confidential-ledger/ledger";
+import type { KeyPair } from "../lib/ledger";
 import { IdentityManager } from "../components/IdentityManager";
 import { LedgerSpreadsheet } from "../components/LedgerSpreadsheet";
 

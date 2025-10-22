@@ -27,32 +27,11 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Debug directory structure
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Directory contents:"
-          ls -la
-          echo "Checking for packages directory:"
-          ls -la packages/ || echo "packages directory not found"
-          echo "Checking for ledger-ui directory:"
-          ls -la ledger-ui/ || echo "ledger-ui directory not found"
-
-      - name: Install ledger package dependencies
+      - name: Install dependencies
         run: bun install
-        working-directory: ./packages/ledger
-
-      - name: Build ledger package
-        run: bun run build
-        working-directory: ./packages/ledger
-
-      - name: Install ledger-ui dependencies
-        run: bun install
-        working-directory: ./ledger-ui
 
       - name: Build
         run: bun run build
-        working-directory: ./ledger-ui
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -60,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ledger-ui/dist
+          path: ./dist
 
   deploy:
     environment:
