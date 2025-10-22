@@ -5,6 +5,7 @@ import { GraphPage } from "./pages/GraphPage";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { FileSpreadsheet, Network, Home } from "lucide-react";
+import ledgerLogo from "/ledger.png";
 
 function Navigation() {
   const location = useLocation();
@@ -21,7 +22,7 @@ function Navigation() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 text-xl font-bold text-foreground hover:text-foreground/70 transition-colors">
             <img 
-              src="/ledger.png" 
+              src={ledgerLogo} 
               alt="Ledger" 
               className="w-8 h-8 object-contain flex-shrink-0" 
               style={{ imageRendering: 'auto' }}
