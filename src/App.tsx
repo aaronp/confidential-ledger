@@ -25,9 +25,11 @@ function Navigation() {
               alt="Ledger" 
               className="w-8 h-8 object-contain flex-shrink-0" 
               style={{ imageRendering: 'auto' }}
+              onLoad={() => console.log('Ledger logo loaded successfully')}
               onError={(e) => {
                 console.error('Failed to load ledger.png:', e);
-                e.currentTarget.style.display = 'none';
+                console.log('Trying fallback approach...');
+                // Don't hide the image, just log the error
               }}
             />
             Confidential Ledger Suite
