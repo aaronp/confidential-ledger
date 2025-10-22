@@ -19,7 +19,8 @@ function Navigation() {
     <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold text-foreground hover:text-foreground/70 transition-colors">
+          <Link to="/" className="flex items-center gap-3 text-xl font-bold text-foreground hover:text-foreground/70 transition-colors">
+            <img src="/ledger.png" alt="Ledger" className="w-8 h-8" />
             Confidential Ledger Suite
           </Link>
           <div className="flex items-center gap-2">
