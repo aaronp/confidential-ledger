@@ -20,7 +20,16 @@ function Navigation() {
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 text-xl font-bold text-foreground hover:text-foreground/70 transition-colors">
-            <img src="/ledger.png" alt="Ledger" className="w-8 h-8" />
+            <img 
+              src="/ledger.png" 
+              alt="Ledger" 
+              className="w-8 h-8 object-contain flex-shrink-0" 
+              style={{ imageRendering: 'auto' }}
+              onError={(e) => {
+                console.error('Failed to load ledger.png:', e);
+                e.currentTarget.style.display = 'none';
+              }}
+            />
             Confidential Ledger Suite
           </Link>
           <div className="flex items-center gap-2">
@@ -30,11 +39,10 @@ function Navigation() {
                 <Link
                   key={path}
                   to={path}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                    isActive
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isActive
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {label}
