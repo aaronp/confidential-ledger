@@ -1,10 +1,3 @@
-# Roadmap — Application Tier / DSD Layer
-
-Goal: We want to model digital assets and digital security depositories in an intuitive, user-friendly way built on top of a 'Kerits' (KERI) implementation which can be used as "your personal blockchain" using KEL for essentially 'proof of authority'.
-
-This is how we are going to achieve our [vision](./vision.md)
-
----
 # Ferits Roadmap
 
 > **Goal:** Deliver the application tier for digital assets, commitments, and governance — powered by verifiable trust (Kerits) and secure connectivity (Merits), but architected as an independent, composable system.
