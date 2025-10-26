@@ -14,10 +14,48 @@ This is our 'financial' app layer, or 'ferits', which will demonstrate digital a
 
 # Use-Cases
 
+Throughout these examples, usability will be a key consideration. In practice, there will be a kind of 'whats-app' messaging experience, where people can branch off to create new groups or sub-groups. Those groups will be delegate AIDs with multi-sig authority by the group under-the-hood, and will be able to create digital assets and DSDs as ledgers stored on TELs. The software will just use naming conventions to show what assets / balances a group has, and they will use merits to share data. Often-times when software is needed to update the state of a ledger, that can be done by a delegete AID of that group -- a "bot" that follows the governance and rules of the asset and makes updates with the requisite proofs that those rules have been obeyed.
 
-The first use-case, **Eyam‑Coin**, is a village-scale demonstration of a stablecoin-like accounting system for local groups, committees, and individuals using “proof of trust / authority” instead of mining or staking.
+## An 'EyamCoin' stablecoin
+
+This will demonstrate that currency is just a promise to deliver a specified value (a ticket, a favor, a service, some fiat currency, etc), and that only the parties involved are needed for 'finality' -- e.g. to witness and verify the integrity of a ledger tracking these promises.
+
+We will have other examples to follow about tickets, fund-raising, and committee budges. Many of the people involved in all of these things already interact in the real world, and would benefit from knowing an 'EyamCoin' stablecoin can be easily redeemed when needed. As people grow to understand and trust that, they will be able to think about the 'EyamCoin' as trustable currency.
+
+## An "EyamCoinA" adult stablecoins
+
+EyamCoinA can only be held by users (AIDs) who have a proof they are over 18. Over-18 users can easily exchange EyamCoins for EyamCoinAs with zero fees - the DSD which tracks the balances simply need to witness that balance update (e.g. Alice used to have 10 EyamCoin and 2 EyamCoinA, and now holds 3 EyamCoin and 9 EyamCoinA. That transaction was done to make a payment at a vendor who only accepts EyamCoinA - a transaction which was witnessed by the EyamCoin and EyamCoinA, Vendor and Alice participants).
+
+The ledger balances themselves show the totals (anybody with EyamCoin or EyamCoinA can see the total supply), but only members can see their balances. That functionality is already demonstrated in our [ledger](../src/lib/ledger.ts)
+
+
+## Eyam PTFA
+
+The PTFA has their own group for agreeing budgets and approving spending. Everyone knows each other, so there is a lot of trust, but also friction where members spend money not allocated and approved by the group. This is potentially concerning, as there are meeting minutes which agree the budgets, which are then not respected.
+
+
+Participants can use ferets to claim expenses against budgets. These transactions can be approved / accepted by the group (or a delegate AID to automate this), and members can easily settle remaining balances while still having fully audited accounts and clear visibility of funds. For example, if there is a fund raiser where two PTFA members are on a stall selling sweets, the committee may have agreed an expenditure of £50 for sweets to sell, and for £100 from the committee to be used as a fiat cash 'float' for issuing change to punters.
+
+The committe members may have purchased £23 of sweets from their own personal funds (which could be submitted/tracked by the DSD against that budget for that event). They may then elect to simply take £23 from the cash available, and later the committee counts up the cash raised from the event.
+
+Another committee member may just take all the cash for their personal use, and simply transfer the equivalent amount to the PTFA bank account.
+
+All of these transactions can be part of the recorded, auditable ledger, allowing everyone to act much more easily than having to bring money to the bank, or not reimburse themselves for already agreed budgets and funds
+
+## Tickets
+
+We should be able to easily 'mint' digital assets, such as tickets to events. Those tickets can be verified to be held by an AID (e.g., the person verifying someone has a ticket only know their AID, though there may have been some governance applied when issuing the ticket which describes who is allowed to hold it). This way we can have local tickets (and prices) for locals, or children, or venders. Assigning prices and restrictions on tickets should be easy, with discretionary disclosure of data and a clear separation of roles.
+
+Those tickets may or may not be transferrable or redeemable for refunds, etc.
+
+## Fundraising
+
+We should be able to take a vote on a priority within a group, and then represent "Can we all agree to give £5 to this". Those commitments can then be redeemed / settled, showing the outstanding commitments and accruals and settled donations as 'actuals', delegating a chosen account (AID) of our chosing for the escrow of those funds, and without revealing any information about individuals' information, but still being able to publicly share the accruals/actuals ledger where each participant can see their own row entry, and all participants can see the ledger total
+
+
 
 ---
+
 
 ## Principles
 
@@ -30,9 +68,9 @@ The first use-case, **Eyam‑Coin**, is a village-scale demonstration of a stabl
 
 ---
 
-## Phase 16 — DSD Layer Foundation
+## Phase 1 — DSD Layer Foundation
 
-**Outcome:** Establish `src/app/dsd` structure and minimal shared utilities.
+**Outcome:** Establish `src/lib/dsd` structure and minimal shared utilities.
 
 - Create folder structure and lint/test setup.
 - Add shared TypeBox schema helper for DSD applications.
@@ -43,7 +81,7 @@ The first use-case, **Eyam‑Coin**, is a village-scale demonstration of a stabl
 
 ---
 
-## Phase 17 — Domain TEL Schemas
+## Phase 2 — Domain TEL Schemas
 
 **Outcome:** Application-level TEL types representing financial and social events.
 
@@ -57,7 +95,7 @@ Each TEL schema extends the core TEL structure with a `kind` and domain-specific
 
 ---
 
-## Phase 18 — Balance Attestations (ACDC Profiles)
+## Phase 3 — Balance Attestations (ACDC Profiles)
 
 **Outcome:** Define profiled ACDCs in DSD, starting with `balance-attestation`.
 
@@ -69,7 +107,7 @@ Each TEL schema extends the core TEL structure with a `kind` and domain-specific
 
 ---
 
-## Phase 19 — World Test: Eyam‑Coin Scenario
+## Phase 4 — World Test: Eyam‑Coin Scenario
 
 **Outcome:** End‑to‑end integration test of the DSD layer using live Kerits primitives.
 
