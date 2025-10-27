@@ -9,7 +9,8 @@
       "Bash(cat:*)",
       "Bash(npm install:*)",
       "Bash(npm test:*)",
-      "Bash(bun test:*)"
+      "Bash(bun test:*)",
+      "Bash(timeout 10 bun run dev:*)"
     ],
     "deny": [],
     "ask": []
