@@ -32,9 +32,9 @@ const capabilities: CapabilityCard[] = [
     title: "Stablecoin / Community Token",
     description:
       "Fungible asset balances with mint, burn, and transfer operations. Build community currencies with privacy.",
-    route: "#",
+    route: "/stablecoin",
     icon: <TrendingUp className="w-6 h-6" />,
-    status: "planned",
+    status: "ready",
     phase: "Phase 2",
   },
   {
