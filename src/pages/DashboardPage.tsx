@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { FileSpreadsheet, Lock, TrendingUp, ArrowRight } from "lucide-react";
+import { FileSpreadsheet, Lock, TrendingUp, ArrowRight, Wallet } from "lucide-react";
 
 interface CapabilityCard {
   title: string;
@@ -38,13 +38,22 @@ const capabilities: CapabilityCard[] = [
     phase: "Phase 2",
   },
   {
-    title: "Budgets & Governance",
+    title: "Budgets & Expense Governance",
     description:
-      "Committee floats, reimbursements, and authorized spending with role-based permissions.",
+      "Multi-party approval workflows for expenses, reimbursements, and authorized spending with delegate bot automation.",
+    route: "/budgeting",
+    icon: <Wallet className="w-6 h-6" />,
+    status: "ready",
+    phase: "Phase 3",
+  },
+  {
+    title: "Advanced Governance",
+    description:
+      "Quadratic voting, weighted decisions, mandate assignment, and participatory priority setting.",
     route: "#",
     icon: <Lock className="w-6 h-6" />,
     status: "planned",
-    phase: "Phase 3+",
+    phase: "Phase 4+",
   },
 ];
 

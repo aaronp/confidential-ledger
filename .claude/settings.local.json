@@ -10,7 +10,8 @@
       "Bash(npm install:*)",
       "Bash(npm test:*)",
       "Bash(bun test:*)",
-      "Bash(timeout 10 bun run dev:*)"
+      "Bash(timeout 10 bun run dev:*)",
+      "Bash(bun run:*)"
     ],
     "deny": [],
     "ask": []

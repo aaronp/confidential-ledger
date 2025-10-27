@@ -490,21 +490,21 @@ After F3 is complete:
 
 ## Implementation Checklist
 
-- [ ] Define `BudgetState`, `Expense`, and `BudgetRules` schemas in `budgeting.schema.ts`
-- [ ] Implement `createBudget()` function with treasury integration
-- [ ] Implement `submitExpense()` with validation
-- [ ] Implement `approveExpense()` with threshold checking
-- [ ] Implement `rejectExpense()` workflow
-- [ ] Add delegate bot auto-approval logic
-- [ ] Implement budget summary and analytics helpers
-- [ ] Write golden snapshot tests for all state transitions
-- [ ] Write property tests for budget invariants
-- [ ] Create budget dashboard UI component
-- [ ] Create expense submission form
-- [ ] Create approval workflow UI
-- [ ] Update dashboard with budgeting card
-- [ ] Document PTFA use case example
-- [ ] Document delegate bot configuration
+- [x] Define `BudgetState`, `Expense`, and `BudgetRules` schemas in `budgeting.schema.ts`
+- [x] Implement `createBudget()` function with treasury integration
+- [x] Implement `submitExpense()` with validation
+- [x] Implement `approveExpense()` with threshold checking
+- [x] Implement `rejectExpense()` workflow
+- [x] Add delegate bot auto-approval logic
+- [x] Implement budget summary and analytics helpers
+- [x] Write golden snapshot tests for all state transitions
+- [x] Write property tests for budget invariants
+- [x] Create budget dashboard UI component
+- [x] Create expense submission form
+- [x] Create approval workflow UI
+- [x] Update dashboard with budgeting card
+- [x] Document PTFA use case example
+- [x] Document delegate bot configuration
 
 ---
 
