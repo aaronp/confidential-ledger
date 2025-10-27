@@ -5,7 +5,11 @@
       "Bash(npx tsc:*)",
       "Read(//Users/aaron/dev/sandbox/berits/merits-legacy/**)",
       "Read(//Users/aaron/dev/sandbox/berits/**)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(bun test:*)"
     ],
     "deny": [],
     "ask": []

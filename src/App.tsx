@@ -2,9 +2,10 @@ import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { LedgerPage } from "./pages/LedgerPage";
 import { GraphPage } from "./pages/GraphPage";
+import { DashboardPage } from "./pages/DashboardPage";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { FileSpreadsheet, Network, Home } from "lucide-react";
+import { FileSpreadsheet, Network, Home, LayoutDashboard } from "lucide-react";
 import ledgerLogo from "/ledger.png";
 
 function Navigation() {
@@ -12,6 +13,7 @@ function Navigation() {
 
   const navItems = [
     { path: "/", label: "Home", icon: Home },
+    { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { path: "/ledger", label: "Ledger", icon: FileSpreadsheet },
     { path: "/graph", label: "Graph", icon: Network },
   ];
@@ -66,6 +68,7 @@ function AppContent() {
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/ledger" element={<LedgerPage />} />
         <Route path="/graph" element={<GraphPage />} />
       </Routes>
