@@ -3,11 +3,12 @@ import { HomePage } from "./pages/HomePage";
 import { LedgerPage } from "./pages/LedgerPage";
 import { StablecoinPage } from "./pages/StablecoinPage";
 import { BudgetingPage } from "./pages/BudgetingPage";
+import { FundraisingPage } from "./pages/FundraisingPage";
 import { GraphPage } from "./pages/GraphPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { FileSpreadsheet, Network, Home, LayoutDashboard, Coins, Wallet } from "lucide-react";
+import { FileSpreadsheet, Network, Home, LayoutDashboard, Coins, Wallet, Target } from "lucide-react";
 import ledgerLogo from "/ledger.png";
 
 function Navigation() {
@@ -19,6 +20,7 @@ function Navigation() {
     { path: "/ledger", label: "Ledger", icon: FileSpreadsheet },
     { path: "/stablecoin", label: "Tokens", icon: Coins },
     { path: "/budgeting", label: "Budgets", icon: Wallet },
+    { path: "/fundraising", label: "Fundraising", icon: Target },
     { path: "/graph", label: "Graph", icon: Network },
   ];
 
@@ -76,6 +78,7 @@ function AppContent() {
         <Route path="/ledger" element={<LedgerPage />} />
         <Route path="/stablecoin" element={<StablecoinPage />} />
         <Route path="/budgeting" element={<BudgetingPage />} />
+        <Route path="/fundraising" element={<FundraisingPage />} />
         <Route path="/graph" element={<GraphPage />} />
       </Routes>
     </div>
